@@ -10,11 +10,11 @@ class Tuddler < Formula
   url "https://packages.vmware.com/ws1-tunnel/cli/#{@@binary_name}"
 
   if OS.mac? && Hardware::CPU.intel?
-    sha256 "a29c69ef1230751d3d78d2b225902f922fc44056a42488c9f5b9bda1d6f12735"
+    sha256 "efd3d0a3412bcbcb40eef72430424cc5f11508c0ab972af2f5ba77a27f5816a6"
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    sha256 "623f5a87756d5d97013e99a3dcba7c2f9a25d1024bb201ac0bdf06a0d15f2c4b"
+    sha256 "cdb6f05b430b5d000ea721017cfde826c0744ca4fb14f2294c8c36188478585a"
   end
 
   if OS.linux? && Hardware::CPU.intel?
