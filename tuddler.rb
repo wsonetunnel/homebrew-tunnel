@@ -1,29 +1,35 @@
+
+# https://rubydoc.brew.sh/Formula.html
+
 class Tuddler < Formula
-    desc "TUnnel Dockerized Deployment controlLER (tuddler)."
-    homepage "https://www.vmware.com/products/workspace-one/tunnel.html"
-    version "v0.0.1"
+  desc "TUnnel Dockerized Deployment controlLER (tuddler)."
+  homepage "https://www.vmware.com/products/workspace-one/tunnel.html"
+  version "1.0.0"
 
-    if OS.mac?
-      url "https://good.wanghuan.me:2053/static/tuddler-#{version}-#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-osx"
-      # sha256 "94fc24364a1dec44006ba647ad124480f7091a6290f36f5b10040917614e3a3f"
-    # elsif OS.linux?
-    #   url "https://github.com/cloudfoundry/bosh-bootloader/releases/download/#{version}/bbl-#{version}_linux_x86-64"
-    #   sha256 "e2d3e69bf4479495cbce44dc8f5cdf28cb0c99f9d5815c3cbf2344d4b27677d6"
-    end
+  @@binary_name="tuddler-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
+  url "https://packages.vmware.com/ws1-tunnel/cli/#{@@binary_name}"
 
-    # depends_on "terraform" => "0.11.0"
-    # depends_on "cloudfoundry/tap/bosh-cli" => "2.0.48"
+  if OS.mac? && Hardware::CPU.intel?
+    sha256 "a29c69ef1230751d3d78d2b225902f922fc44056a42488c9f5b9bda1d6f12735"
+  end
 
-    def install
-      binary_name = "tuddler"
-      if OS.mac?
-        bin.install "tuddler-#{version}-#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-osx" => binary_name
-    #   elsif OS.linux?
-    #     bin.install "bbl-#{version}_linux_x86-64" => binary_name
-      end
-    end
+  if OS.mac? && Hardware::CPU.arm?
+    sha256 "623f5a87756d5d97013e99a3dcba7c2f9a25d1024bb201ac0bdf06a0d15f2c4b"
+  end
 
-    test do
-      system "#{bin}/#{binary_name} --help"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    sha256 "70d22c969a668219b74cc59100ad2726f459d48b89551d64945d6f049ad73d60"
+  end
+
+  if OS.linux? && Hardware::CPU.arm?
+    sha256 "2995c52c0d6083af8007625ece6495d2fcbc9c583d88861b6ce8bc4d5e0ee72f"
+  end
+
+  def install
+      bin.install @@binary_name => "tuddler"
+  end
+
+  test do
+    system "#{bin}/tuddler version"
+  end
 end
