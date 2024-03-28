@@ -2,4 +2,4 @@
 Tunnel Homebrew Package
 
 1. `brew tap wsonetunnel/tunnel`
-2. `brew install tuddler`
+2. `brew install dux`
