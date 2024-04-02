@@ -4,17 +4,17 @@
 class Dux < Formula
   desc "Workspace ONE Tunnel CLI (dux)."
   homepage "https://www.vmware.com/products/workspace-one/tunnel.html"
-  version "2.0.0.2"
+  version "2.0.0.3"
 
   @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
   #  url "https://packages.vmware.com/ws1-tunnel/cli/#{@@binary_name}"
    url "http://packages-dev.eng.vmware.com/ws1-tunnel/BETA_dux/2.0.0.2/#{@@binary_name}"
   if OS.mac? && Hardware::CPU.intel?
-    sha256 "eb0c90a57f80d1a24df4bf80be9531cf52385bd0f4a36c92fcf1fc7f8815e58c"
+    sha256 "c81c56bde26b473bdcb6c71107590a155f5e5d4ad5880028e7beac11518e00ea"
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    sha256 "8f07eb47f9dd94d4c748362952feb2548f868154f9ad86cb530106e07893efd1"
+    sha256 "ba35642e38570ce07ea612a56334483bc83d9a1cfa8a876f8e994ffe4554b1e5"
   end
 
 
@@ -26,6 +26,7 @@ class Dux < Formula
 
       dux_logs_dir = "#{HOMEBREW_PREFIX}/var/opt/vmware/dux/logs"
       FileUtils.mkdir_p(dux_logs_dir)
+      ohai "Successfully installed dux!"
 
   end
 
