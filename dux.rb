@@ -8,7 +8,7 @@ class Dux < Formula
 
   @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
   #  url "https://packages.vmware.com/ws1-tunnel/cli/#{@@binary_name}"
-   url "http://packages-dev.eng.vmware.com/ws1-tunnel/BETA_dux/2.0.0.2/#{@@binary_name}"
+   url "http://packages.vmware.com/ws1-tunnel/dux/2.0.0.3/#{@@binary_name}"
   if OS.mac? && Hardware::CPU.intel?
     sha256 "c81c56bde26b473bdcb6c71107590a155f5e5d4ad5880028e7beac11518e00ea"
   end
