@@ -15,11 +15,11 @@ class DuxAT22 < Formula
     # Replace the following with the shasum caluclated with shasum -a 256 <binary>
     # Following lines are placeholders
     if OS.mac? && Hardware::CPU.intel?
-      sha256 "37fe691a4701f25161e7ab3d4bf94db2300330af4cbd82970cb340c8ad505c3c"
+      sha256 "8febc035f4a27b8db953b58d6afe13716e962422b9159e1fb49358afbc30777f"
     end
   
     if OS.mac? && Hardware::CPU.arm?
-      sha256 "24dfc54cdafbe98550c1c086e9c32a00b66386598d1035f633cfce7ab8e1751d"
+      sha256 "182303946e64f61ea2ddb5953de6716b0ef4333764f7f3a8d2ad69d5af335cf9"
     end
   
   
