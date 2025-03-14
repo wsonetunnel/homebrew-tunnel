@@ -3,20 +3,20 @@
 class Dux < Formula
     desc "Workspace ONE Tunnel CLI (dux)."
     homepage "https://www.omnissa.com/products/workspace-one-tunnel/"
-    version "2.2"
+    version "2.3"
   
     @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
 
-    url "https://packages.omnissa.com/ws1-tunnel/dux/2.2.0.247/#{@@binary_name}"
+    url "https://packages.omnissa.com/ws1-tunnel/dux/2.3.0.405/#{@@binary_name}"
      
-    # Replace the following with the shasum caluclated with shasum -a 256 <binary>
+    # Replace the following with the shasum calculated with shasum -a 256 <binary>
     # Following lines are placeholders
     if OS.mac? && Hardware::CPU.intel?
-      sha256 "8febc035f4a27b8db953b58d6afe13716e962422b9159e1fb49358afbc30777f"
+      sha256 "2f954cd16943b7fa8461283af5c729ab0f6f9a7af9a5a2021a9d7af5083eca49"
     end
   
     if OS.mac? && Hardware::CPU.arm?
-      sha256 "182303946e64f61ea2ddb5953de6716b0ef4333764f7f3a8d2ad69d5af335cf9"
+      sha256 "8412e9246e54505bbdee4f347ceb88ae21e59e70b32b69a1a3a9194fb45df908"
     end
   
   
