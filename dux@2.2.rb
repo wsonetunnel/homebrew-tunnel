@@ -7,7 +7,7 @@ class DuxAT22 < Formula
   
     @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
     #url will be updated post upload to packages.omnissa.com. The following line is a placeholder
-     url "https://packages.omnissa.com/ws1-tunnel/dux/2.2/#{@@binary_name}"
+     url "https://packages.omnissa.com/ws1-tunnel/dux/2.2.0.247/#{@@binary_name}"
      
     # If you wish to use a binary from local file system
     #url "file://<file_path>/#{@@binary_name}"
