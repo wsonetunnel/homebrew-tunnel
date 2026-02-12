@@ -1,22 +1,22 @@
 # https://rubydoc.brew.sh/Formula.html
 
-class Dux < Formula
-    desc "Omnissa CLI - dux"
+class DuxAT30 < Formula
+    desc "Workspace ONE Tunnel CLI (dux)."
     homepage "https://www.omnissa.com/products/workspace-one-tunnel/"
-    version "3.1"
+    version "3.0"
   
     @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
 
-    url "https://packages.omnissa.com/ws1-tunnel/dux/3.1.0.852/#{@@binary_name}"
+    url "https://packages.omnissa.com/ws1-tunnel/dux/3.0.0.641/#{@@binary_name}"
      
     # Replace the following with the shasum calculated with shasum -a 256 <binary>
     # Following lines are placeholders
     if OS.mac? && Hardware::CPU.intel?
-      sha256 "b085ce16cb332b6afff0b1af07b1c63461099f9c83bb122403f825ac9c4f613f"
+      sha256 "fee882492083958c549747da95e30fbd954f4d69eaea704ebdc1a391e8cfadd5"
     end
   
     if OS.mac? && Hardware::CPU.arm?
-      sha256 "d76e5cd2874a41085b7968c5684b006495a830b0a864fb0bbd990657e4480224"
+      sha256 "6ec42abae9e2e931dd68c938d2329aa652c5b8d68ea7ef11cb8066984056ac5e"
     end
   
   
@@ -41,13 +41,6 @@ class Dux < Formula
         dux_logs_dir = "#{HOMEBREW_PREFIX}/var/opt/omnissa/dux/logs"
         FileUtils.mkdir_p(dux_logs_dir)
         ohai "Successfully installed dux!"
-
-        dux_certs_dir = "#{HOMEBREW_PREFIX}/var/opt/omnissa/dux/certs"
-        FileUtils.mkdir_p(dux_certs_dir)
-
-
-        dux_scripts_dir = "#{HOMEBREW_PREFIX}/var/opt/omnissa/dux/scripts"
-        FileUtils.mkdir_p(dux_scripts_dir)
   
     end
   
