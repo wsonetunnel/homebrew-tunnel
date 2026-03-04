@@ -4,19 +4,31 @@ class Dux < Formula
     desc "Omnissa CLI - dux"
     homepage "https://www.omnissa.com/products/workspace-one-tunnel/"
     version "3.1"
+
+    license <<~EOS
+    Copyright © 2024-2026 Omnissa. All rights reserved. This product is protected
+    by copyright and intellectual property laws in the United States and other
+    countries as well as by international treaties. Omnissa products are covered by
+    one or more patents listed at: https://www.omnissa.com/omnissa-patent-information/.
+    Omnissa products are also covered by general and offering-specific legal terms,
+    as well as the privacy and open-source software notices hosted on the Omnissa
+    Legal Center at: https://www.omnissa.com/legal-center/. "Omnissa" refers to
+    Omnissa, LLC, Omnissa International Unlimited Company, and/or their subsidiaries.
+    EOS
+
   
     @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
 
-    url "https://packages.omnissa.com/ws1-tunnel/dux/3.1.0.852/#{@@binary_name}"
+    url "https://packages.omnissa.com/ws1-tunnel/dux/3.1.0.886/#{@@binary_name}"
      
     # Replace the following with the shasum calculated with shasum -a 256 <binary>
     # Following lines are placeholders
     if OS.mac? && Hardware::CPU.intel?
-      sha256 "b085ce16cb332b6afff0b1af07b1c63461099f9c83bb122403f825ac9c4f613f"
+      sha256 "b1ce727fabfcdb933d2f29ff050582b097ac1fcdc4a054c24f36f33ee2bbadce"
     end
   
     if OS.mac? && Hardware::CPU.arm?
-      sha256 "d76e5cd2874a41085b7968c5684b006495a830b0a864fb0bbd990657e4480224"
+      sha256 "6c93e14d824cde3eed460966db3d93e83e35f9f6f3155c1f0b7f9af316494141"
     end
   
   
