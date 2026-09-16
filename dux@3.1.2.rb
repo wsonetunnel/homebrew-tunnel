@@ -1,9 +1,9 @@
 # https://rubydoc.brew.sh/Formula.html
 
-class Dux < Formula
+class DuxAT312 < Formula
     desc "Omnissa CLI - dux"
     homepage "https://www.omnissa.com/products/workspace-one-tunnel/"
-    version "4.0.0"
+    version "3.1.2"
 
     license <<~EOS
     Copyright © 2024-2026 Omnissa. All rights reserved. This product is protected
@@ -19,16 +19,16 @@ class Dux < Formula
   
     @@binary_name="dux-#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.intel? ? "amd64" : "arm64"}_#{version}"
 
-    url "https://packages.omnissa.com/ws1-tunnel/dux/4.0.0.1162/#{@@binary_name}"
+    url "https://packages.omnissa.com/ws1-tunnel/dux/3.1.2.1076/#{@@binary_name}"
      
     # Replace the following with the shasum calculated with shasum -a 256 <binary>
     # Following lines are placeholders
     if OS.mac? && Hardware::CPU.intel?
-      sha256 "67ea8b37a7e4bca7057c82ccbf86e7c330d5c2a86a48708c7bfe8b69638daeaa"
+      sha256 "91227ca786d1d0904110d02d728f57562ca1e1ba8336543cff0fa417ac1f682d"
     end
   
     if OS.mac? && Hardware::CPU.arm?
-      sha256 "7d96679e6fde04bfb4150bd4a2b5c26418f1df2016f62c68388b0158acbe708b"
+      sha256 "8f75dd96210af76c54858287ffa6984f53b1d28bfb5d0bba6c5617e432db809d"
     end
   
   
